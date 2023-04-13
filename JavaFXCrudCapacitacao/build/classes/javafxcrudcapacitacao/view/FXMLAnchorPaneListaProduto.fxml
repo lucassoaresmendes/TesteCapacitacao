@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxcrudcapacitacao.controller.FXMLAnchorPaneListaProdutoController">
+   <children>
+      <SplitPane dividerPositions="0.4" layoutX="109.0" layoutY="56.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="398.0" prefWidth="322.0">
+               <children>
+                  <TableView fx:id="tableViewProdutos" layoutY="14.0" prefHeight="398.0" prefWidth="296.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <columns>
+                      <TableColumn fx:id="tableColumnProdutoDescricao" prefWidth="155.0" text="Descricao" />
+                      <TableColumn fx:id="tableColumnProdutoMarca" prefWidth="160.0" text="Marca" />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="106.0" prefWidth="100.0">
+               <children>
+                  <GridPane layoutY="37.0" prefHeight="239.0" prefWidth="376.0" AnchorPane.bottomAnchor="322.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="37.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="187.0" minWidth="10.0" prefWidth="187.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="221.0" minWidth="10.0" prefWidth="189.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label text="Descrição:" />
+                        <Label text="Marca:" GridPane.rowIndex="1" />
+                        <Label text="Fabricante:" GridPane.rowIndex="2" />
+                        <Label text="Preço de Custo:" GridPane.rowIndex="3" />
+                        <Label text="Preço de Venda:" GridPane.rowIndex="4" />
+                        <Label text="Código de Barras" GridPane.rowIndex="5" />
+                        <Label fx:id="labelProdutoDescricao" GridPane.columnIndex="1" />
+                        <Label fx:id="labelProdutoMarca" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label fx:id="labelProdutoFabricante" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label fx:id="labelProdutoPrecoCusto" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <Label fx:id="labelProdutoPrecoVenda" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <Label fx:id="labelProdutoCodigoBarra" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                     </children>
+                  </GridPane>
+                  <Label layoutX="14.0" layoutY="14.0" prefHeight="19.0" prefWidth="134.0" text="Detalhes do Produto:" textAlignment="CENTER" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="148.0" AnchorPane.topAnchor="14.0">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="buttonInserir" layoutX="199.0" layoutY="11.0" mnemonicParsing="false" onAction="#handleButtonInserir" text="Inserir" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="10.0" />
+                  <Button fx:id="buttonAlterar" layoutX="258.0" layoutY="11.0" mnemonicParsing="false" onAction="#handleButtonAlterar" text="Alterar" AnchorPane.rightAnchor="90.0" AnchorPane.topAnchor="10.0" />
+                  <Button fx:id="buttonRemover" layoutX="318.0" layoutY="11.0" mnemonicParsing="false" onAction="#handleButtonRemover" text="Remover" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="10.0" />
+                  <TitledPane animated="false" layoutX="98.0" layoutY="299.0" text="Embalagens" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="280.0">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TableView fx:id="tableViewEmbalagem" layoutX="14.0" layoutY="14.0" prefHeight="205.0" prefWidth="231.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="0.0">
+                                <columns>
+                                  <TableColumn fx:id="tableColumnDescricaoEmbalagem" prefWidth="118.00000154972076" text="Descrição" />
+                                  <TableColumn fx:id="tableColumnQuantidadeEmbalagem" prefWidth="125.99999237060547" text="Quantidade" />
+                                </columns>
+                              </TableView>
+                              <Pane layoutX="282.6" layoutY="47.6" prefHeight="253.0" prefWidth="185.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="245.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
+                                 <children>
+                                    <Label layoutY="14.0" text="Descrição:" />
+                                    <Label layoutY="48.0" text="Quantidade:" />
+                                    <TextField fx:id="txtDescricaoEmbalagem" layoutX="58.0" layoutY="10.0" prefHeight="25.0" prefWidth="137.0" promptText="Escreva a descrição" />
+                                    <TextField fx:id="txtQuantidadeEmbalagem" layoutX="68.0" layoutY="44.0" prefHeight="25.0" prefWidth="128.0" promptText="Escreva a quantidade" />
+                                    <Button fx:id="btRemover" layoutX="127.0" layoutY="195.0" mnemonicParsing="false" onAction="#handleBtRemover" text="Remover" />
+                                    <Button fx:id="btAlterar" layoutX="65.0" layoutY="195.0" mnemonicParsing="false" onAction="#handleBtAlterar" text="Alterar" />
+                                    <Button fx:id="btInserir" layoutX="7.0" layoutY="195.0" mnemonicParsing="false" onAction="#handleBtInserir" text="Inserir" />
+                                 </children>
+                              </Pane>
+                              <Label layoutX="264.0" layoutY="14.0" text="Embalagem">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </TitledPane>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
